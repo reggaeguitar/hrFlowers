@@ -2,20 +2,18 @@
 #include <string.h>
 #include <stdlib.h>
 
-int comp_desc(const void * a, const void * b)
+int comp_desc(const void * aPtr, const void * bPtr)
 {
-	int * aPtr = (int*)a;
-	int * bPtr = (int*)b;
-	return *bPtr - *aPtr;
+	int a = *(int*)aPtr;
+	int b = *(int*)bPtr;
+	return b - a;
 }
 
 int main()
 {
 	int flowersNeeded, numFriends;
 	scanf("%d %d", &flowersNeeded, &numFriends);
-	getchar();
 	int flowerCosts[100];
-	memset(flowerCosts, 0, sizeof(flowerCosts));
 	for (int i = 0; i < flowersNeeded; ++i)
 	{
 		scanf("%d", &flowerCosts[i]);
